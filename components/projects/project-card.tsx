@@ -1,0 +1,11 @@
+import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { Reveal } from "@/components/motion/reveal";
+import type { Project } from "@/types/portfolio";
+import { formatProjectIndex } from "@/utils/format";
+
+export interface ProjectCardProps { project: Project; index: number; }
+
+export function ProjectCard({ project, index }: ProjectCardProps) {
+  return <Reveal delay={index * 0.06}><article className="group overflow-hidden rounded-[2rem] border border-border/70 bg-card shadow-[0_24px_80px_-48px_rgba(0,0,0,0.45)] backdrop-blur-xl transition duration-500 hover:-translate-y-1"><Link className="block rounded-[2rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background" href={`/projects/${project.slug}`}><div className={`relative aspect-[4/3] overflow-hidden bg-gradient-to-br ${project.accent}`}><div className="absolute inset-[12%] rounded-[1.5rem] border border-white/30 bg-background/65 shadow-2xl backdrop-blur-xl transition-transform duration-700 ease-out group-hover:scale-[1.025] group-hover:-rotate-1"><div className="flex h-12 items-center gap-2 border-b border-border/60 px-4"><span className="size-2 rounded-full bg-foreground/20" /><span className="size-2 rounded-full bg-foreground/20" /><span className="size-2 rounded-full bg-foreground/20" /></div><div className="grid h-[calc(100%-3rem)] grid-cols-3 gap-3 p-4"><div className="rounded-xl bg-muted/80" /><div className="col-span-2 grid gap-3"><div className="rounded-xl bg-foreground/10" /><div className="grid grid-cols-2 gap-3"><div className="rounded-xl bg-muted/80" /><div className="rounded-xl bg-muted/80" /></div></div></div></div></div><div className="flex items-start justify-between gap-6 p-6 sm:p-8"><div><p className="text-xs font-medium tracking-[0.18em] text-muted-foreground">{formatProjectIndex(index)}</p><h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em] sm:text-3xl">{project.title}</h3><p className="mt-3 max-w-xl leading-7 text-muted-foreground">{project.summary}</p></div><span className="grid size-11 shrink-0 place-items-center rounded-full border border-border bg-background/70 transition-transform duration-300 group-hover:rotate-45" aria-hidden="true"><ArrowUpRight className="size-4" /></span></div></Link></article></Reveal>;
+}
