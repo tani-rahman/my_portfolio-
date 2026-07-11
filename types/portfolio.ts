@@ -18,6 +18,22 @@ export interface Project {
   accent: string;
 }
 
+export interface Education {
+  degree: string;
+  institution: string;
+  result: string;
+}
+
+export interface SkillGroup {
+  category: string;
+  skills: readonly string[];
+}
+
+export interface ExperienceArea {
+  title: string;
+  description: string;
+}
+
 export interface ContactFormState {
   status: "idle" | "success" | "error";
   message: string;

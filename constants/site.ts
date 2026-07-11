@@ -1,14 +1,43 @@
-import type { NavigationItem, Project, SocialLink } from "@/types/portfolio";
+import type { Education, ExperienceArea, NavigationItem, Project, SkillGroup, SocialLink } from "@/types/portfolio";
 
 export const siteConfig = {
-  name: "Alex Morgan",
-  role: "Designer & Full-stack Engineer",
+  name: "Mahinur Rahman Tani",
+  role: "Full Stack Web Developer",
   description:
-    "I design and build thoughtful digital products for ambitious teams, from first principle to polished release.",
-  email: "hello@example.com",
+    "Computer Science student building scalable full-stack applications and exploring Artificial Intelligence and Large Language Models.",
+  email: "tanimahinurrahman@gmail.com",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  location: "Working globally",
+  location: "Bangladesh",
 } as const;
+
+export const profile = {
+  about:
+    "I am a Computer Science student passionate about Full Stack Web Development and Artificial Intelligence. I enjoy building scalable web applications using Laravel, PHP, WordPress, and modern frontend technologies. My goal is to contribute to impactful software projects while pursuing research in AI and Large Language Models.",
+  objective:
+    "I am seeking opportunities to build modern web applications, contribute to AI research, and pursue graduate studies through an international master’s scholarship.",
+} as const;
+
+export const education: Education = {
+  degree: "B.Sc. in Computer Science & Engineering",
+  institution: "International Islamic University Chittagong",
+  result: "CGPA 3.43",
+};
+
+export const skillGroups: readonly SkillGroup[] = [
+  { category: "Frontend", skills: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"] },
+  { category: "Backend", skills: ["PHP", "Laravel", "Node.js"] },
+  { category: "Database", skills: ["MySQL", "PostgreSQL"] },
+  { category: "CMS", skills: ["WordPress"] },
+  { category: "Tools", skills: ["Git", "GitHub", "Figma", "VS Code"] },
+  { category: "AI", skills: ["OpenAI API", "LLM Applications", "Prompt Engineering"] },
+] as const;
+
+export const experienceAreas: readonly ExperienceArea[] = [
+  { title: "Field Work", description: "Practical collaboration and problem-solving in real-world environments." },
+  { title: "Internship", description: "Professional exposure to development workflows, teamwork, and delivery." },
+  { title: "University Projects", description: "Applied software engineering through academic and independent projects." },
+  { title: "Research", description: "Growing research interests in Artificial Intelligence and Large Language Models." },
+] as const;
 
 export const navigation: readonly NavigationItem[] = [
   { label: "Work", href: "/#work" },
@@ -17,8 +46,8 @@ export const navigation: readonly NavigationItem[] = [
 ];
 
 export const socialLinks: readonly SocialLink[] = [
-  { label: "GitHub", href: "https://github.com", external: true },
-  { label: "LinkedIn", href: "https://linkedin.com", external: true },
+  { label: "GitHub", href: "https://github.com/tani-rahman", external: true },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/mahinur-rahman-tani-441a12328", external: true },
   { label: "Email", href: `mailto:${siteConfig.email}`, external: false },
 ];
 
@@ -56,10 +85,10 @@ export const projects: readonly Project[] = [
 ];
 
 export const expertise = [
-  "Product strategy",
-  "Interface design",
-  "Design systems",
-  "Full-stack engineering",
-  "Creative development",
-  "Performance & accessibility",
+  "Full-stack web development",
+  "Laravel & PHP applications",
+  "Modern React interfaces",
+  "WordPress development",
+  "Database design",
+  "AI & LLM applications",
 ] as const;
